@@ -1,5 +1,3 @@
-
-
 // поле ввода, а также элемент span, в который мы поместим сообщение об ошибке.
 
 var form  = document.getElementsByTagName('form')[0];
@@ -42,31 +40,50 @@ let createEvent = function(varName, element = "input", func, prevent = false){
 
 createChecker = function(varName, ErrObj, classes = "error active"){
 	createEvent(varName);
-	var checker = false
+	var checker = false;
 	for (var [key, value] of Object.entries(ErrObj)){
 		if (checker = varName.validity[key]){
 			changeItem(varName, value, classes);
 			checkErrorClass(varName);
-			break;
+			return false;
 		}
 	}
 	if (!checker){
 		changeItem(varName);
+		return true;
 	}
 };
 
 // проверки при отправке
 
 createEvent(form, "submit", function(e){
-	createChecker(userName, {
+	
+	var valid = false
+	
+	valid = createChecker(userName, {
 		"valueMissing": "Enter your name, please",
 		"patternMismatch": "Enter correct name, please"
 	});
 
-	createChecker(email, {
+	valid = createChecker(email, {
 		"valueMissing": "Enter your email, please",
 		"patternMismatch": "Enter correct email, please"
 	});
 
 	e.preventDefault();
+	
+	// Enter event valid
+	// ... .contact-page
+
+    console.log(valid);
+
+    if(valid ){
+        let contactPageCheck = document.querySelector('.contact-page');
+        console.log(contactPageCheck);
+        
+
+        if(!!contactPageCheck == true){
+            contactPageCheck.classList.add('success');
+        }
+    }
 });
