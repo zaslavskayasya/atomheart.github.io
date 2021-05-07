@@ -61,7 +61,7 @@
       <div class="container-2">
         <div class="wrap-planet-invest">
           <div class="planet-about"><img class="animate_planet" src="./img/planet.svg"></div>
-          <div class="points-about"><img src="./img/points.svg"></div>
+          <div class="points-about"><img class="animate_points" src="./img/points.svg"></div>
         </div>
         <h3 class="h3">APPLY FOR INVESTMENT</h3>
         <p class="content-text_big">
@@ -76,11 +76,11 @@
           <div class="form-row">
             <div class="form-item">
               <label class="form-label content-text" for="invest-name">Name*</label>
-              <input class="form-input name field invest-name" type="text" pattern="[A-Za-z]{2,50}" required id="invest-name" placeholder="Your name"><span class="errorName"></span>
+              <input class="form-input name field invest-name" type="text" pattern="[A-Za-z]{2,50}" required id="invest-name" placeholder="Your name"><span class="error">1</span>
             </div>
             <div class="form-item">
               <label class="form-label content-text" for="invest-mail">Email*</label>
-              <input class="form-input email field invest-mail" type="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" id="invest-mail" placeholder="Your email"><span class="errorMail"></span>
+              <input class="form-input email field invest-mail" type="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" id="invest-mail" placeholder="Your email"><span class="error">1</span>
             </div>
           </div>
           <textarea class="textarea" id="invest-textarea" name="" placeholder="Type your message here..."></textarea>
@@ -94,5 +94,6 @@
       </div>
     </footer>
     <script src="./js/main.min.js"></script>
+    <script src="./js/forms.js"></script>
   </body>
 </html>
