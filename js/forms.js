@@ -79,11 +79,15 @@ createEvent(form, "submit", function(e){
 
     if(valid ){
         let contactPageCheck = document.querySelector('.contact-page');
-        console.log(contactPageCheck);
         
+
+		let investPageCheck = document.querySelector('.invest-page');        
 
         if(!!contactPageCheck == true){
             contactPageCheck.classList.add('success');
         }
+		if(!!investPageCheck == true){
+			document.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeKciikTYOHjN_0rlvJ32xzON_l5KMUY7gzoC7oOhA855ohtg/viewform";
+		}
     }
 });
